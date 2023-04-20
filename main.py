@@ -5,11 +5,6 @@ import requests
 import openai
 
 
-# openai.api_key = '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'
-# audio_file = open("static/audio/testWhisper.mp3", "rb")
-# transcript = openai.Audio.transcribe("whisper-1", audio_file)
-
-#OpenAI api key = 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
 
 PEOPLE_FOLDER = os.path.join('static', 'images')
 
@@ -18,7 +13,9 @@ app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 
 @app.route('/', methods =["GET", "POST"])
 def index():
-    transcript = ""
+
+    # API STABLE DIFFUSSION
+
     # if request.method == "POST":
         # prompt = request.form.get("prompt")
         # apiKey = request.form.get("apiKey")
@@ -61,18 +58,22 @@ def index():
         #     with open(f"static/images/txt2img_{i}.png", "wb") as f:
         #         f.write(base64.b64decode(image["base64"]))
         
-    response = requests.get("http://127.0.0.1:8000/respuestas",
-        headers={
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        })
+    #API WHISPER
 
-    data = response.json()
+    # response = requests.get("http://127.0.0.1:8000/respuestas",
+    #     headers={
+    #         "Content-Type": "application/json",
+    #         "Accept": "application/json",
+    #     })
 
-    print(data)
+    # data = response.json()
+
+    # print(data)
 
         # full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'txt2img_0.png')
     # return render_template("index.html", user_image = full_filename)
+
+    # 
     return "Funciona rey"
 
 if __name__ == "__main__":
