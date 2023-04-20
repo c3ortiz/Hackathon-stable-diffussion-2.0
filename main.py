@@ -19,7 +19,7 @@ app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 @app.route('/', methods =["GET", "POST"])
 def index():
     transcript = ""
-    if request.method == "POST":
+    # if request.method == "POST":
         # prompt = request.form.get("prompt")
         # apiKey = request.form.get("apiKey")
 
@@ -61,18 +61,19 @@ def index():
         #     with open(f"static/images/txt2img_{i}.png", "wb") as f:
         #         f.write(base64.b64decode(image["base64"]))
         
-        response = requests.post("localhost:8000/temp",
-            headers={
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            })
+    response = requests.get("http://127.0.0.1:8000/respuestas",
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        })
 
-        data = response.json()
+    data = response.json()
 
-        print(data)
+    print(data)
 
-        full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'txt2img_0.png')
-    return render_template("index.html", user_image = full_filename)
+        # full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'txt2img_0.png')
+    # return render_template("index.html", user_image = full_filename)
+    return "Funciona rey"
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)
