@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubberduck App - Study using the power of AI</title>
+    <link href="../static/response.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div id='desktop-4' class='desktop-4'>
+        <div id='rectangle6' class='rectangle6'>
+        </div>
+        <div id='rectangle7' class='rectangle7'>
+        </div>
+        <div id='thisiswhatwe’velearned' class='thisiswhatwe’velearned'>
+        This is what we’ve learned</div>
+        <div id='thetextsummarygoeshere' class='thetextsummarygoeshere'>
+        The text summary goes here</div>
+        <div id='practicewithme' class='practicewithme'>
+        Practice with me</div>
+        <div id='img1' class='img1'>
+        Img 1
+        </div>
+        <div id='rectangle8' class='rectangle8'>
+        </div>
+        <div id='img2' class='img2'>
+        Img 2
+        </div>
+        <div id='rectangle9' class='rectangle9'>
+        </div>
+        <div id='img3' class='img3'>
+        Img 3
+        </div>
+        <div id='rectangle10' class='rectangle10'>
+        </div>
+        <div id='img4' class='img4'>
+        Img 4
+        </div>
+        <img id='patito' class='patito' src='De nuevo la fuente de la misma imagen'/>
+        </img>
+        </div>
+        {% for url in image_urls %}
+		  <img src="{{ url }}" alt="image">
+	    {% endfor %}
+</body>
+</html>
