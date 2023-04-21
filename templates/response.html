@@ -12,37 +12,45 @@
     <div id='desktop-4' class='desktop-4'>
         <div id='rectangle6' class='rectangle6'>
         </div>
-        <div id='rectangle7' class='rectangle7'>
-        </div>
-        <div id='thisiswhatwe’velearned' class='thisiswhatwe’velearned'>
-        This is what we’ve learned</div>
+        <div id='thisiswhatwevelearned' class='thisiswhatwevelearned'>
+        This is what we've learned - {{ projectName }}</div>
         <div id='thetextsummarygoeshere' class='thetextsummarygoeshere'>
-        The text summary goes here</div>
+            Summary:
+            <br />
+            <br />
+            {{ summary }} 
+            <br />
+            <br />
+            Questions: 
+            <br />
+            <br />
+            {{ questions }}</div>
         <div id='practicewithme' class='practicewithme'>
         Practice with me</div>
+        <!-- <div id='rectangle7' class='rectangle7'>
+        </div> -->
         <div id='img1' class='img1'>
-        Img 1
+            <img src="{{ url[0] }}" alt="image">
         </div>
-        <div id='rectangle8' class='rectangle8'>
-        </div>
+        <!-- <div id='rectangle8' class='rectangle8'>
+        </div> -->
         <div id='img2' class='img2'>
-        Img 2
+            <img src="{{ url[1] }}" alt="image">
         </div>
-        <div id='rectangle9' class='rectangle9'>
-        </div>
+        <!-- <div id='rectangle9' class='rectangle9'>
+        </div> -->
         <div id='img3' class='img3'>
-        Img 3
+            <img src="{{ url[2] }}" alt="image">
         </div>
-        <div id='rectangle10' class='rectangle10'>
-        </div>
+        <!-- <div id='rectangle10' class='rectangle10'>
+        </div> -->
         <div id='img4' class='img4'>
-        Img 4
+            <img src="{{ url[3] }}" alt="image">
         </div>
-        <img id='patito' class='patito' src='De nuevo la fuente de la misma imagen'/>
-        </img>
+        <img id='patito' class='patito' src='static\images\patito.gif'/>
         </div>
-        {% for url in image_urls %}
+        <!-- {% for url in image_urls %}
 		  <img src="{{ url }}" alt="image">
-	    {% endfor %}
+	    {% endfor %} -->
 </body>
 </html>
